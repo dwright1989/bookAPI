@@ -29,7 +29,8 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home").permitAll()
                         .requestMatchers("/register/**").permitAll()
-                        .requestMatchers("/hello").hasRole("ADMIN")
+                        .requestMatchers("/hello").hasRole(com.debbie.bookAPI.enums.Role.DEFAULT.toString())
+                        .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")

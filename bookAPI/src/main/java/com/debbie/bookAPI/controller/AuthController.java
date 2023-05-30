@@ -22,7 +22,7 @@ public class AuthController {
         this.userService = userService;
     }
     // handler method to handle home page request
-    @GetMapping("/")
+    @GetMapping({"/", "/home"})
     public String home(){
         return "home";
     }
@@ -62,7 +62,7 @@ public class AuthController {
         return "login";
     }
 
-    @GetMapping("/hello")
+   @GetMapping("/hello")
     public String hello(){
         return "hello";
     }
